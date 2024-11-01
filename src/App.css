@@ -1,0 +1,235 @@
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Body background */
+body {
+  background-image: url('/background-image.png'); /* Path to image in the public folder */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0.6); /* Light overlay */
+  padding: 20px;
+  color: #333;
+  text-align: center; /* Centers the content by default */
+}
+
+/* Navigation bar container */
+nav {
+  background-color: #ffffff;
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Style for navigation links */
+.nav-link {
+  color: #444;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link:hover {
+  background-color: #007bff;
+  color: #ffffff;
+  border-color: #007bff;
+}
+
+.nav-link.active {
+  background-color: #f57c00;
+  color: #ffffff;
+  border-color: #f57c00;
+}
+
+/* Cart wrapper for icon and count */
+.cart-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: #e64a19;
+  color: white;
+  border-radius: 50%;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Amazon-like product list styling */
+ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+/* Product card styling */
+li {
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  text-align: left;
+  width: 280px;
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Product name styling */
+li .product-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Product price styling */
+li .product-price {
+  font-size: 16px;
+  color: #666; /* Neutral grey color for a subtle look */
+  font-weight: bold;
+}
+
+/* Cart button */
+button {
+  margin-top: auto;
+  padding: 8px 16px;
+  border: 1px solid #f57c00;
+  border-radius: 5px;
+  background-color: #f57c00;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #e64a19;
+  transform: translateY(-2px);
+}
+
+/* Amazon-like cart item styling */
+.cart-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.cart-item-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-item-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.cart-item-price {
+  font-size: 14px;
+  color: #666; /* Neutral grey color for consistency with Amazon style */
+}
+
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-button {
+  padding: 5px 10px;
+  background-color: #f57c00;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.quantity-button:hover {
+  background-color: #e64a19;
+}
+
+.remove-button {
+  color: #888;
+  cursor: pointer;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.remove-button:hover {
+  color: #e64a19;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .nav-link {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  ul {
+    padding: 10px 0;
+  }
+  li {
+    width: 100%;
+  }
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cart-item-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+}
